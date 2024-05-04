@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Clonacion del codigo
+        uses: actions/checkout@v4
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@4.2.1
+        with:
+          java-version: '8'
+          distribution: 'temurin'
+
+      - name: Compilacion
+        run: |
+          mvn package
+
+      - name: Test Unitarios
+        run: mvn test
