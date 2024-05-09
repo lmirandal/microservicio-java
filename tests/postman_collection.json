@@ -1,0 +1,39 @@
+{
+    "info": {
+      "name": "Prueba de Postman",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "GET localhost:8080/",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "localhost:8080/",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              ""
+            ]
+          }
+        },
+        "response": []
+      }
+    ],
+    "event": [
+      {
+        "listen": "test",
+        "script": {
+          "exec": [
+            "pm.test(\"Cuerpo es igual a 'Hola, soy Luis Miranda.'\", function () {",
+            "    pm.response.to.have.body('Hola, soy Luis Miranda.');",
+            "});"
+          ],
+          "type": "text/javascript"
+        }
+      }
+    ]
+  }
